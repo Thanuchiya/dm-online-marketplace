@@ -1,5 +1,6 @@
 package fr.esipe.thanuchiya.dmonlinemarketplace.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 
 import java.util.List;
@@ -7,77 +8,62 @@ import java.util.List;
 /**
  * @author  Thanuchiya THANANCHEYAN
  */
-public class Product {
 
-	/**
-	 * Reference of the product
-	 */
-	private String id;
-	private String name;
-	private String urlImage;
-	/**
-	 * Price in cents
-	 */
-	private Integer price;
-	private  String description;
-	private List<String> componentDescriptions;
+@Builder
+@AllArgsConstructor
+public class ProductDto {
+    private String id;
+    private String name;
+    private Integer price;
+    private String description;
+    private List<String> componentDescription;
+    private String urlImage;
 
+    public String getId() {
+        return id;
+    }
 
-	@Builder
-	public ProductDto () {
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	}
+    public String getName() {
+        return name;
+    }
 
-	private Product (String id){
-		this.id=id;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public Integer getPrice() {
+        return price;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public String getUrlImage() {
-		return urlImage;
-	}
+    public List<String> getComponentDescription() {
+        return componentDescription;
+    }
 
-	public void setUrlImage(String urlImage) {
-		this.urlImage = urlImage;
-	}
+    public void setComponentDescription(List<String> componentDescription) {
+        this.componentDescription = componentDescription;
+    }
 
-	public Integer getPrice() {
-		return price;
-	}
+    public String getUrlImage() {
+        return urlImage;
+    }
 
-	public void setPrice(Integer price) {
-		this.price = price;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public List<String> getComponentDescriptions() {
-		return componentDescriptions;
-	}
-
-	public void setComponentDescriptions(List<String> componentDescriptions) {
-		this.componentDescriptions = componentDescriptions;
-	}
-}
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
 }
